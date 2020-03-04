@@ -14,3 +14,11 @@ feature 'see player 2 hit points' do
     expect(page).to have_content "Jara's hit points: 10"
   end
 end
+
+feature 'hit player 2' do
+  scenario 'player 1 one press hit button' do
+    sign_in_and_play
+    click_button 'hitPlayer2'
+    expect(page).to have_content 'You hit Jara'
+  end
+end
