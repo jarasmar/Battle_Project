@@ -4,8 +4,9 @@
 feature 'Name entry form' do
   scenario 'player form' do
     visit ('/')
-    fill_in ('player1'), with: 'Gareth'
-    fill_in ('player2'), with: 'Jara'
+    fill_in :player1, with: 'Gareth'
+    fill_in :player2, with: 'Jara'
     click_button 'Submit'
+    expect(page).to have_content 'Gareth vs. Jara'
   end
 end
