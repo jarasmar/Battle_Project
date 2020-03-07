@@ -1,1 +1,7 @@
-<p>You hit <%= @player2 %></p>
+<h3>You attacked <%= @current_game.turn.name %>!</h3>
+<p> <%= @current_game.player_1.name %>: <%= @current_game.player_1.points %> HP</p>
+<p> <%= @current_game.player_2.name %>: <%= @current_game.player_2.points %> HP</p>
+
+<a href='/play' id='back'> Go Back to Game </a>
+
+<p><% if @current_game.turn.points == 0 %> <%= @current_game.turn.name %> is dead <% end %></p>
